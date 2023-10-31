@@ -1,0 +1,95 @@
+html, body {
+    
+    background-color: #1B1924;
+    user-select: none;
+   
+}
+
+.Image {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+img {
+    width: 90px;
+    height: 90px;
+}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+
+
+textarea {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: #8F8F8F;
+    padding-left: 5px;
+    padding-top: 5px;
+    background-color: #444059;
+    width: 317px;
+    height: 118px;
+    border-radius: 10px;
+    border: 2px #444059 ;
+    resize: none;
+}
+
+::placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 5px;
+    padding-top: 5px;
+    color: #8F8F8F;
+    font-size: 15px;
+} 
+
+button {
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #04131C;
+    background-color:#28A9F1 ;
+    width: 317px;
+    height: 61px;
+}
+
+button:hover {
+    background-color:#444059;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #28A9F1;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+
+
+h3 {
+    color: #FFFFFF;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+
+}
+
+
+p {
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    max-width: 317px;
+    background-color: #FFFFFF;
+    color: #1B1924;
+}
