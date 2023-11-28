@@ -26,26 +26,57 @@ h1 {
     color: #FFFFFF;
 }
 
+.form-style{
+    display: flex;
+    flex-direction: column;
+    
+}
 
+.inputs{
+    
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
-textarea {
+.input-style{
+    font-family: 'Josefin Sans', sans-serif;
+    color: #8F8F8F;
+    background-color: #444059;
+    width: 142px;
+    height: 40px;
+    border: 2px #444059 ;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    
+}
+
+.input-text {
+    position: relative;
+    padding-bottom: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
     color: #8F8F8F;
-    padding-left: 5px;
-    padding-top: 5px;
     background-color: #444059;
     width: 317px;
     height: 118px;
     border-radius: 10px;
     border: 2px #444059 ;
     resize: none;
+    overflow: hidden;
+    
 }
 
 ::placeholder {
+    position: absolute;
     font-family: 'Josefin Sans', sans-serif;
-    padding-left: 5px;
-    padding-top: 5px;
+    top: 10px;
+    left: 10px;
     color: #8F8F8F;
     font-size: 15px;
 } 
@@ -84,12 +115,21 @@ h3 {
 
 }
 
+h4{
+    margin-top: 0;
+    width: 71px;
+    height: 15px;
+    color: #1B1924
+    
+}
 
-p {
-    padding: 10px;
+.comment-style {
+    border: 5px solid #1B1924;
+    padding: 8px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 12px;
-    max-width: 317px;
+    width: 317px;
     background-color: #FFFFFF;
     color: #1B1924;
 }
+

@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Noto+Sans:wght@100&display=swap" rel="stylesheet">
@@ -16,11 +17,18 @@
         <div class="Image">
         <img src="freddie.png" alt="a photo for the App a guy raises his hand up">
         <h1>We are the Champions</h1>
-         
-       
-        <textarea id="textarea-el" name="comments" placeholder="Write your endorsement here" required></textarea>
-        <button id="btn-el">Publish</button>
-       
+           
+            <form class="form-style" id="btn-el">
+            <textarea 
+            class="input-text" type="text" id="textarea-el" name="comments" 
+            placeholder="Write your endorsement here" required></textarea>
+            <div class="inputs">
+            <input class="input-style" type="text" id="from-input" placeholder="From" name="sender" required>
+            <input class="input-style" type="text" id="to-input" placeholder="To" name="receiver" required>
+            </div>
+            <button type="submit" >Publish</button>
+        </form>
+        
 
         <h3>- Endorsements -</h3>
         <div id="comments"></div>

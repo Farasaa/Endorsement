@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from 
 "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
@@ -14,26 +15,46 @@ const endorsementInDB = ref(database, "Endorsement")
 const textAreaEl = document.getElementById("textarea-el")
 const btnEl = document.getElementById("btn-el")
 const commentsEl = document.getElementById("comments")
+const fromInput = document.getElementById("from-input")
+const toInput = document.getElementById("to-input")
 
 
 
 
+document.addEventListener('click', function(e){
+    if(e.target.dataset.like){
+
+    }
+})
   
-btnEl.addEventListener("click", function() {
-    let inputValue = textAreaEl.value
-    push(endorsementInDB, inputValue)
-    clearTextAreaEl()
-    
 
+
+btnEl.addEventListener('submit', function(e) {
+    e.preventDefault()
+    let inputValue = textAreaEl.value
+    let fromInputValue = fromInput.value
+    let toInputValue = toInput.value
+    let uuid = uuidv4()
+    
+    push(endorsementInDB, {inputValue, fromInputValue, toInputValue, uuid})
+    
+    clearTextAreaEl()
 
 })
 
+function handleLoveIcon(snapshot){
 
+    const itemID = snapshot.uuid
+    return itemID
 
+}
 
+console.log(handleLoveIcon(endorsementInDB))
 
 function clearTextAreaEl() {
     textAreaEl.value = ""
+    fromInput.value = ""
+    toInput.value = ""
 }
 
 
@@ -44,33 +65,30 @@ function clearComments() {
 
 onValue(endorsementInDB, function(snapshot) {
     
-
-    let itemsArray = Object.entries(snapshot.val())
-
+    const itemsArray = Object.values(snapshot.val())
+    
+    
+    let newCommentHtml = ''
     clearComments()
+    itemsArray.forEach(function(newComment){
+        newCommentHtml += `<div class="comment-style">
+        <h4>To ${newComment.toInputValue}</h4>
+        <p>${newComment.inputValue}</p>  
+        <h4>From ${newComment.fromInputValue}</h4>
+        <i class="fa-solid fa-heart" data-like="${newComment.uuid}"></i>
+        </div>
+        `
+    })
+   
+    return renderComments(newCommentHtml)
 
-    for (let i = 0; i < itemsArray.length; i++) {
-        let currentComment = itemsArray[i]
-        let currentCommentID = currentComment[0]
-        let currentCommentValue = currentComment[1]
-        renderComments(currentComment)
-    }
 
 })
 
+
+
 function renderComments(item) {
-    let itemID = item[0]
-    let itemValue = item[1]
-    
-    let newEl = document.createElement("p")
-    
-    
-    newEl.textContent = itemValue
-    
-    commentsEl.append(newEl)
-        
-        
-        
+    commentsEl.innerHTML = item              
     }
     
     
